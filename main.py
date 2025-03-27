@@ -9,6 +9,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
+import time
 
 
 def filtrar_vendas():
@@ -71,13 +72,12 @@ def enviar_email():
     pasta = os.getenv('PASTA_ARQUIVOS')
     email_remetente = os.getenv('EMAIL_REMETENTE')
     senha_app = os.getenv('SENHA_APP')
-    email_destinatario = os.getenv('EMAIL_DESTINATARIO')
     
     # Verifica se todas as variáveis necessárias estão definidas
-    if None in [pasta, email_remetente, senha_app, email_destinatario]:
+    if None in [pasta, email_remetente, senha_app]:
         print("Erro: Algumas variáveis de ambiente não estão definidas.")
         print("Verifique seu arquivo .env e as seguintes variáveis:")
-        print("PASTA_ARQUIVOS, EMAIL_REMETENTE, SENHA_APP, EMAIL_DESTINATARIO")
+        print("PASTA_ARQUIVOS, EMAIL_REMETENTE, SENHA_APP")
         return
     
     data_atual = datetime.now().strftime('%d/%m/%Y')
@@ -98,7 +98,7 @@ def enviar_email():
         
         msg = MIMEMultipart()
         msg['From'] = email_remetente
-        msg['To'] = email_destinatario
+        msg['To'] = 'gerente@empresa.com'
         msg['Subject'] = f'Resumo de Vendas - {data_atual}'
         
         corpo = """Prezado Gerente,  
@@ -131,6 +131,7 @@ Equipe de Automação"""
                                                  
 def main():
     filtrar_vendas()
+    time.sleep(3)
     enviar_email()
 
 if __name__ == "__main__":
