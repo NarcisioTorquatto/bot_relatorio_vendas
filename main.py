@@ -98,7 +98,7 @@ def enviar_email():
         
         msg = MIMEMultipart()
         msg['From'] = email_remetente
-        msg['To'] = 'gerente@empresa.com'
+        msg['To'] = 'exemplo@empresa.com'
         msg['Subject'] = f'Resumo de Vendas - {data_atual}'
         
         corpo = """Prezado Gerente,  
