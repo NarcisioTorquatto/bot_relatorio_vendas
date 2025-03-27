@@ -45,13 +45,7 @@ O script utiliza variáveis de ambiente para armazenar informações sensíveis,
 EMAIL_REMETENTE: E-mail do remetente.
 SENHA_APP: Senha do aplicativo gerada no Google (não a senha comum).
 PASTA_ARQUIVOS: Caminho para a pasta com a Planilha.
-EMAIL_DESTINATARIO: Email de Quem vai receber.
 ```
-
-- **EMAIL_REMETENTE**: E-mail do remetente.
-- **SENHA_APP**: Senha do aplicativo gerada no Google (não a senha comum).
-- **PASTA_ARQUIVOS**: Caminho para a pasta com a Planilha.
-- **EMAIL_DESTINATARIO**: Email de Quem vai receber.
 
 ## Como Usar
 
